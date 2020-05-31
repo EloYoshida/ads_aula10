@@ -84,9 +84,8 @@ public class ComprarFilmesController extends HttpServlet {
 				for(Filme filme:carrinho) {
 					compra = new Compra();
 					compra.setDataCompra(new Date());
-					compra.setIdFilme(filme.getId());
-					compra.setTituloFilme(filme.getTitulo());
 					compra.setUsuario(logado.getUsername());
+					compra.setFilme(filme);
 					compras.add(compra);
 				}
 				cService.gravarLogCompra(path, compras);

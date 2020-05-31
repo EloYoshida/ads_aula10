@@ -46,7 +46,7 @@
 	<div class="row">
 		<c:forEach var="compra" items="${compras}">
 			<c:if test="${not empty compra}">
-				<p class="bg-info" >${compra.dataCompra} - ${compra.idFilme} - ${compra.tituloFilme} = ${compra.usuario}</p>
+				<p class="bg-info" >${compra.dataCompra} - ${compra.filme.id} - ${compra.filme.titulo} = ${compra.usuario}</p>
 			</c:if>
 			<c:if test="${empty compra}">
 				<h3 class="bg-danger" >Ainda não há compras.</h3>

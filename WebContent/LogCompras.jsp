@@ -44,14 +44,41 @@
 	<div class="container">
 	<fmt:setLocale value="pt_BR"/>
 	<div class="row">
-		<c:forEach var="compra" items="${compras}">
-			<c:if test="${not empty compra}">
-				<p class="bg-info" >${compra.dataCompra} - ${compra.filme.id} - ${compra.filme.titulo} = ${compra.usuario}</p>
-			</c:if>
-			<c:if test="${empty compra}">
-				<h3 class="bg-danger" >Ainda não há compras.</h3>
-			</c:if>
-		</c:forEach>
+		<table class="table table-hover">
+		  <thead class="">
+		    <tr>
+		      <th scope="col">ID</th>
+		      <th scope="col">Filme</th>
+		      <th scope="col">Data/Hora</th>
+		      <th scope="col">Usuário</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+  			<c:forEach var="compra" items="${compras}">
+				<c:if test="${not empty compra}">
+					<tr>
+				      <th scope="row">${compra.filme.id}</th>
+				      <td>${compra.filme.titulo}</td>
+				      <td>${compra.dataCompra}</td>
+				      <td>${compra.usuario}</td>
+				    </tr>
+				</c:if>
+				<c:if test="${empty compra}">
+					<h3 class="bg-danger" >Ainda não há compras.</h3>
+				</c:if>
+			</c:forEach>
+
+		  </tbody>
+		</table>
+
+<%-- 		<c:forEach var="compra" items="${compras}"> --%>
+<%-- 			<c:if test="${not empty compra}"> --%>
+<%-- 				<p class="bg-info" >${compra.dataCompra} - ${compra.filme.id} - ${compra.filme.titulo} = ${compra.usuario}</p> --%>
+<%-- 			</c:if> --%>
+<%-- 			<c:if test="${empty compra}"> --%>
+<!-- 				<h3 class="bg-danger" >Ainda não há compras.</h3> -->
+<%-- 			</c:if> --%>
+<%-- 		</c:forEach> --%>
 	<hr />
 	</div>
 	<div id="actions" class="row">

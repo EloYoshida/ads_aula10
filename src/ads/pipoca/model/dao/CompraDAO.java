@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import ads.pipoca.model.entity.Compra;
+import ads.pipoca.model.entity.Filme;
 
 public class CompraDAO {
 	public static final String SEP=";";
@@ -26,8 +27,10 @@ public class CompraDAO {
 		String linha = "";
 		System.out.println(outFile);
 		for(Compra compra:compras) {
-			linha = compra.getDataCompra().getTime()+SEP+compra.getIdFilme()+
-					SEP+compra.getTituloFilme()+SEP+compra.getUsuario();
+			linha = compra.getDataCompra().getTime()+SEP
+					+compra.getFilme().getId()+SEP
+					+compra.getFilme().getTitulo()+SEP
+					+compra.getUsuario();
 			System.out.println(linha);
 			writer.println(linha);
 		}

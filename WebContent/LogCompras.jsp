@@ -64,9 +64,17 @@
 				    </tr>
 				</c:if>
 				<c:if test="${empty compra}">
-					<h3 class="bg-danger" >Ainda não há compras.</h3>
+					<tr>
+				      <th scope="row" colspan="4">Ainda não há compras.</th>
+					</tr>
+				</c:if>					</c:if>
 				</c:if>
 			</c:forEach>
+		<c:if test="${compras == null || compras.size() == 0}">
+				<tr>
+			      <th scope="row" colspan="4">Ainda não há compras.</th>
+				</tr>
+			</c:if>
 
 		  </tbody>
 		</table>
